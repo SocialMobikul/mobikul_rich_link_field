@@ -12,9 +12,10 @@ void main() {
     ),
   );
 }
+
 // Example usage
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,18 +43,18 @@ class MyHomePage extends StatelessWidget {
             decoration: TextDecoration.underline,
           ),
           onChanged: (value) {
-            print('Text changed: $value');
+            debugPrint('Text changed: $value');
           },
           onHashtagTap: (hashtag) {
-            print('Hashtag tapped: $hashtag');
+            debugPrint('Hashtag tapped: $hashtag');
             // Show hashtag details or navigate to hashtag page
           },
           onMentionTap: (mention) {
-            print('Mention tapped: $mention');
+            debugPrint('Mention tapped: $mention');
             // Show user profile or navigate to user page
           },
           onUrlTap: (url) {
-            print('URL tapped: $url');
+            debugPrint('URL tapped: $url');
             // Open URL in browser or show preview
           },
         ),

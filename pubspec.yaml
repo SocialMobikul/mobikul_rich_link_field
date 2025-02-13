@@ -1,7 +1,8 @@
 name: mobikul_rich_link_field
 description: "The MobikulRichLinkField is a powerful Flutter package that provides a text field with clickable segments for hashtags, mentions, and URLs."
 version: 0.0.1
-homepage:
+homepage: https://github.com/SocialMobikul/mobikul_rich_link_field
+repository: https://github.com/SocialMobikul/mobikul_rich_link_field
 
 environment:
   sdk: '>=3.2.3 <4.0.0'

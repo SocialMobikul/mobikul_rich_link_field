@@ -76,10 +76,10 @@ MobikulRichLinkField(
 Here’s an example of the `MobikulRichLinkField` in action:
 
 ## Basic Text Field
-![basic Text Field](https://example.com/rich_text_field.gif)
+![basic Text Field](https://raw.githubusercontent.com/SocialMobikul/mobikul_rich_link_field/main/basic_package.gif)
 
 ## Rich Text Field For Mention, Hashtag and URL detection
-![Rich Text Field](https://example.com/rich_text_field.gif)
+![Rich Text Field](https://raw.githubusercontent.com/SocialMobikul/mobikul_rich_link_field/main/package_feature.gif)
 
 
 Start building interactive text fields today with the `MobikulRichLinkField` package! 🚀

@@ -18,13 +18,15 @@ enum SegmentType {
 /// Class representing a clickable and interactive segment within the text
 /// This class is used to create clickable parts like hashtags, mentions, or URLs
 class ClickableSegment {
-  final int start;       // Start index of the segment in the text
-  final int end;         // End index of the segment in the text
-  final String text;     // The actual text of the segment
+  final int start; // Start index of the segment in the text
+  final int end; // End index of the segment in the text
+  final String text; // The actual text of the segment
   final TextStyle style; // Text style for rendering the segment
-  final SegmentType type;// Type of the segment (hashtag, mention, url, or normal)
-  final VoidCallback? onTap; // Optional callback triggered when the segment is tapped
-  bool isHovered;        // Flag to indicate hover state for styling purposes
+  final SegmentType
+      type; // Type of the segment (hashtag, mention, url, or normal)
+  final VoidCallback?
+      onTap; // Optional callback triggered when the segment is tapped
+  bool isHovered; // Flag to indicate hover state for styling purposes
 
   /// Constructor to initialize a clickable segment
   ClickableSegment({
@@ -41,18 +43,20 @@ class ClickableSegment {
   /// If hovered, the style is slightly modified (color opacity and font size)
   TextStyle get effectiveStyle => isHovered
       ? style.copyWith(
-    color: style.color?.withOpacity(0.7),
-    fontSize: (style.fontSize ?? 14) + 1,
-  )
+          color: style.color?.withOpacity(0.7),
+          fontSize: (style.fontSize ?? 14) + 1,
+        )
       : style;
 }
 
 /// Custom TextEditingController to handle clickable segments in the text
 /// It detects and manages hashtags, mentions, and URLs, making them interactive
 class ClickableTextFieldController extends TextEditingController {
-  final List<ClickableSegment> segments = [];  // List of clickable segments in the text
-  final VoidCallback onSegmentsChanged;        // Callback when segments change
-  final Function(String, SegmentType)? onSegmentTap; // Callback when a segment is tapped
+  final List<ClickableSegment> segments =
+      []; // List of clickable segments in the text
+  final VoidCallback onSegmentsChanged; // Callback when segments change
+  final Function(String, SegmentType)?
+      onSegmentTap; // Callback when a segment is tapped
 
   /// Constructor to initialize the controller
   /// - [onSegmentsChanged] is called when segments are updated or hovered
@@ -72,7 +76,7 @@ class ClickableTextFieldController extends TextEditingController {
     required bool withComposing,
   }) {
     final List<TextSpan> children = []; // Holds the text parts to be displayed
-    String plainText = text;            // The full text from the controller
+    String plainText = text; // The full text from the controller
     int currentPosition = 0;
 
     // Sort segments by start position to maintain the correct order
@@ -137,8 +141,8 @@ class ClickableTextFieldController extends TextEditingController {
   /// Updates segments by detecting hashtags, mentions, and URLs in the text
   /// This uses regular expressions to identify and categorize segments
   void updateSegments() {
-    final hashtagPattern = RegExp(r'#\w+');     // Pattern for hashtags
-    final mentionPattern = RegExp(r'@\w+');     // Pattern for mentions
+    final hashtagPattern = RegExp(r'#\w+'); // Pattern for hashtags
+    final mentionPattern = RegExp(r'@\w+'); // Pattern for mentions
     final urlPattern = RegExp(r'https?://\S+'); // Pattern for URLs
 
     segments.clear(); // Clear existing segments to rebuild
