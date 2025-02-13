@@ -41,12 +41,7 @@ class ClickableSegment {
 
   /// Method to get the effective style of the segment
   /// If hovered, the style is slightly modified (color opacity and font size)
-  TextStyle get effectiveStyle => isHovered
-      ? style.copyWith(
-          color: style.color?.withOpacity(0.7),
-          fontSize: (style.fontSize ?? 14) + 1,
-        )
-      : style;
+  TextStyle get effectiveStyle => style;
 }
 
 /// Custom TextEditingController to handle clickable segments in the text
